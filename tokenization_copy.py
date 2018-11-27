@@ -3,6 +3,7 @@
 import spacy
 import glob
 import tensorflow
+print('df')
 print("Fetch this")
 nlp = spacy.load('en')
 

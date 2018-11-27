@@ -2,7 +2,7 @@
 
 import spacy
 import glob
-
+import tensorflow
 nlp = spacy.load('en')
 
 

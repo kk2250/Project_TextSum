@@ -2,8 +2,7 @@
 
 import spacy
 import glob
-import tensorflow
-print("Fetch this")
+
 nlp = spacy.load('en')
 
 
@@ -29,8 +28,7 @@ with open("dictionary.txt", "w") as dictionary:
 with open("dictionary_count.txt", "w") as dictionary1:
     dictionary1.write("{}".format(word_count))
 
-addadd
+aff
 
-hello world
 #if __name__ == '__main__':
 #   print(word_dict)

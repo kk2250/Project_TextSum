@@ -28,6 +28,8 @@ with open("dictionary.txt", "w") as dictionary:
 with open("dictionary_count.txt", "w") as dictionary1:
     dictionary1.write("{}".format(word_count))
 
-a
+ad
+
+hello world
 #if __name__ == '__main__':
 #   print(word_dict)

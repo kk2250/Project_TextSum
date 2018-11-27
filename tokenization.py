@@ -25,5 +25,9 @@ for _ in range(len(all_files)):
 with open("dictionary.txt", "w") as dictionary:
     dictionary.write("{}".format(word_dict))
 
+with open("dictionary_count.txt", "w") as dictionary1:
+    dictionary1.write("{}".format(word_count))
+
+
 #if __name__ == '__main__':
 #   print(word_dict)

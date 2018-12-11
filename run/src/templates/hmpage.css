@@ -53,22 +53,30 @@ body {
   }
   
   /* GOOGLE AREA */
-  .google #google_logo {
+  /* .google  {
+    vertical-align: text-top;
     text-align: center;
     display: block;
     margin: 0 auto;
     clear: both;
-    padding-top: 112px;
-    padding-bottom: 20px;
+    padding: 0;
+  } */
+  img {
+    align : right;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height : 250px;
+    width: 250px;
   }
-  
   .form {
     text-align: center;
+    width: 10% px;
   }
   
   #form-search { 
-    width: 450px;
-    line-height: 32px;
+    width: 100px;
+    line-height: 100px;
     padding: 20px 10px;
   }
   

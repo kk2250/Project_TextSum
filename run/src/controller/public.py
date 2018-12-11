@@ -13,8 +13,3 @@ def frontpage():
         text = request.form['summarize']
         
         return render_template('templates/homepage.html', message=message)
-
-# @controller.route('/login',methods=['GET','POST'])
-# def log_in():
-#     if request.method == 'GET':
-#         return render_template('unauthorized/login.html')

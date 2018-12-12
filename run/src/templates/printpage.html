@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>TextSum</title>
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link href="hmpage.css" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/hmpage.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -14,9 +14,12 @@
   </div>
   <div class= "buttons">  
     <!-- <input type="submit" value="Download" id="summarize"> -->
-    <form method="get" action="file.doc">
+    <!-- <form method="get" action="file.doc">
       <button type="submit">Download</button>
-    </form>
+    </form> -->
+    <a href="/download/" target="blank">
+      <button type="submit">Download</button>
+    </a>
     <p></p>
     <a href="/">
       <button type="submit">Back</button>

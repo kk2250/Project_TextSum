@@ -10,19 +10,19 @@
 <body>
   <img src="http://pngimg.com/uploads/glasses/glasses_PNG54343.png"/>
   <div class="form">  
-  <form id="upload" action="index.html" method="POST" enctype="multipart/form-data">  
-    <label for="form-search">
-    <textarea name="paragraph_text" cols="60" rows="10" placeholder="Type Text" style="text-align: center;"></textarea>
-    </label>
+    <form id="upload" method="POST" enctype="multipart/form-data">  
+      <label for="form-search">
+      <textarea name="paragraph_text" cols="60" rows="10" placeholder="Type Text" style="text-align: center;"></textarea>
+      </label>
+      <div class="form">
+        <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+        <label for="fileselect">Files to upload:</label>
+        <input type="file" id="fileselect" name="fileselect" multiple="multiple" />
+      </div>
+      <div class= "buttons">
+        <input type="submit" value="Summarize" id="summarize">
+      </div>
+    </form>
   </div>
-  <div class="form">
-    <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
-      <label for="fileselect">Files to upload:</label>
-      <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-    <div class= "buttons">  
-      <input type="submit" value="Summarize" id="summarize">
-    </div>
-  </div>
-  </form>
 </body>
 </html>

@@ -15,9 +15,11 @@ def frontpage():
     elif request.method == 'POST':
         if request.form['paragraph_text']:
             text = request.form['paragraph_text']
+            with open('run/src/static/ori_text.txt','w+') as f:
+                f.write(text)
             try:
                 summ1 = summarize(text)
-                with open('run/src/static/textfile.txt','w+') as f:
+                with open('run/src/static/textfile1.txt','w+') as f:
                     f.write(summ1)
                 return render_template('printpage.html', message=summ1)
             except ValueError:

@@ -6,7 +6,7 @@ from werkzeug import secure_filename
 import os
 # from model import model
 
-controller = Blueprint('public',__name__)
+controller = Blueprint('public',__name__,static_folder='static',static_url_path='/static')
 
 @controller.route('/',methods=['GET','POST'])
 def frontpage():
@@ -17,7 +17,7 @@ def frontpage():
             text = request.form['paragraph_text']
             try:
                 summ1 = summarize(text)
-                with open('textfile.txt','w+') as f:
+                with open('run/src/static/textfile.txt','w+') as f:
                     f.write(summ1)
                 return render_template('printpage.html', message=summ1)
             except ValueError:
@@ -26,11 +26,11 @@ def frontpage():
         elif request.files['fileselect']:
             text_file = request.files['fileselect']
             filename = secure_filename(text_file.filename)
-            text_file.save(os.path.join("ori_text.txt"))
-            with open('ori_text.txt') as f:
+            text_file.save(os.path.join("run/src/static/ori_text.txt"))
+            with open('run/src/static/ori_text.txt') as f:
                 content = f.read()
             summ2 = summarize(content)
-            with open('textfile1.txt','w+') as f:
+            with open('run/src/static/textfile1.txt','w+') as f:
                 f.write(summ2)
             return render_template('printpage.html', message=summ2)
         else:
@@ -38,7 +38,7 @@ def frontpage():
 
 @controller.route('/download')
 def download():
-    return send_file('/Users/kkim2250/Desktop/Project_TextSum/textfile1.txt', as_attachment=True, attachment_filename="textfile1.txt")
+    return send_file('/Users/kkim2250/Desktop/Project_TextSum/run/src/static/textfile1.txt', as_attachment=True, attachment_filename="textfile1.txt")
 
 
 # @controller.route('/out',methods=['GET','POST'])

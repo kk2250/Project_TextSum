@@ -41,17 +41,3 @@ def frontpage():
 @controller.route('/download')
 def download():
     return send_file('/Users/kkim2250/Desktop/Project_TextSum/run/src/static/textfile1.txt', as_attachment=True, attachment_filename="textfile1.txt")
-
-
-# @controller.route('/out',methods=['GET','POST'])
-# def printpage():
-#     if request.method == 'GET':
-#         message = session['text']
-#         return render_template('printpage.html', message=message)
-#     elif request.method == 'POST':
-#         text_file = request.file['upload']
-#         text = request.form['summ']
-#         if text_file:
-#             return render_template('printpage.html', message=message)
-#         elif text:
-#             return render_template('printpage.html', message=message)

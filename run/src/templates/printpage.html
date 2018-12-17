@@ -3,27 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <title>TextSum</title>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
-  <link href="{{url_for('static', filename='css/hmpage.css')}}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/bootstrap4/bootstrap.min.css')}}">
+  <link href="{{url_for('static', filename='plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/services_styles.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/services_responsive.css')}}">
+  <style>
+    .result_text {
+      text-align: left;
+      font-size: 17px;
+    }
+    input[type=button], input[type=submit] {
+      background-color: #ff4200;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-  <img src="http://pngimg.com/uploads/glasses/glasses_PNG54343.png"/>
-  <div class="result">
+
+<div class="super_container">
+  <header class="header d-flex flex-row justify-content-end align-items-center">
+    <div class="logo_container mr-auto">
+      <div class="logo">
+        <a href="/"><span>T</span>TextSum<span>.</span></a>
+      </div>
+    </div>
+  </header>
+	<div class="home prlx_parent">
+    <div class="home_background prlx" style="background-image:url(static/images/services_parallax.jpg)"></div>
+    <div class="services_page_shapes" style="background-image:url(static/images/services_page_shapes.png)"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="home_content">
+            <h1>Result</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="result_text">
       {{ message }}
   </div>
-  <div class= "buttons">  
-    <!-- <input type="submit" value="Download" id="summarize"> -->
-    <!-- <form method="get" action="file.doc">
-      <button type="submit">Download</button>
-    </form> -->
-    <a href="/download" target="blank">
-      <button type="submit">Download</button>
-    </a>
-    <p></p>
-    <a href="/">
-      <button type="submit">Back</button>
-    </a>
+  <div class="services">
+    <div class="container">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <div class="button services_button">
+            <a href="/download" class="d-flex flex-row align-items-center justify-content-center">
+              Download<img src="static/images/arrow_right.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col text-center">
+            <!-- <div class="button services_button"> -->
+              <!-- <div class= "buttons">
+                <input type="submit" value="Summarize" id="summarize">
+              </div> -->
+              <form method="POST">
+                <div class='buttons'>
+                <input type="submit" value="Re-Sum" id="summarize">
+                <!-- <a href="/result" class="d-flex flex-row align-items-center justify-content-center">
+                  Re-Sum<img src="static/images/arrow_right.svg" alt="">
+                </a> -->
+                </div>
+              </form>
+            <!-- </div> -->
+        </div>
+        <div class="col text-center">
+          <div class="button services_button">
+            <a href="/" class="d-flex flex-row align-items-center justify-content-center">
+              Back<img src="static/images/arrow_right.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 </body>
 </html>

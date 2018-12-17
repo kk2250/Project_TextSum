@@ -21,22 +21,35 @@ def frontpage():
                 summ1 = summarize(text)
                 with open('run/src/static/textfile1.txt','w+') as f:
                     f.write(summ1)
-                return render_template('printpage.html', message=summ1)
+                return redirect('/result')
             except ValueError:
-                message = 'You need to write more than one sentence.'
-                return render_template('printpage.html', message=message)
+                return render_template('homepage.html')
         elif request.files['fileselect']:
             text_file = request.files['fileselect']
             filename = secure_filename(text_file.filename)
             text_file.save(os.path.join("run/src/static/ori_text.txt"))
-            with open('run/src/static/ori_text.txt') as f:
+            with open('run/src/static/ori_text.txt','r') as f:
                 content = f.read()
             summ2 = summarize(content)
             with open('run/src/static/textfile1.txt','w+') as f:
                 f.write(summ2)
-            return render_template('printpage.html', message=summ2)
+            return redirect('/result')
         else:
             return render_template('homepage.html')
+
+@controller.route('/result',methods=['GET','POST'])
+def results():
+    if request.method == 'GET':
+        with open('run/src/static/textfile1.txt','r') as f:
+            summ = f.read()
+        return render_template('printpage.html', message=summ)
+    elif request.method == 'POST':
+        with open('run/src/static/textfile1.txt','r') as ff:
+            content = ff.read()
+        summ1 = summarize(content)
+        with open('run/src/static/textfile1.txt','w+') as fff:
+            fff.write(summ1)
+        return render_template('printpage.html', message=summ1)
 
 @controller.route('/download')
 def download():

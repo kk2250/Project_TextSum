@@ -52,7 +52,10 @@
     </div>
   </div>
   <div class="result_text">
-      {{ message }}
+    <h2>Abstractive Summary</h2>
+  </div>
+  <div class="result_text">
+    {{ message }}
   </div>
   <div class="services">
     <div class="container">
@@ -67,19 +70,11 @@
           </div>
         </div>
         <div class="col text-center">
-            <!-- <div class="button services_button"> -->
-              <!-- <div class= "buttons">
-                <input type="submit" value="Summarize" id="summarize">
-              </div> -->
-              <form method="POST">
-                <div class='buttons'>
-                <input type="submit" value="Re-Sum" id="summarize">
-                <!-- <a href="/result" class="d-flex flex-row align-items-center justify-content-center">
-                  Re-Sum<img src="static/images/arrow_right.svg" alt="">
-                </a> -->
-                </div>
-              </form>
-            <!-- </div> -->
+          <form method="POST">
+            <div class='buttons'>
+            <input type="submit" value="Re-Sum" id="summarize">
+            </div>
+          </form>
         </div>
         <div class="col text-center">
           <div class="button services_button">
@@ -91,6 +86,41 @@
       </div>
     </div>
   </div>
+  <div>
+    <h2>Extractive Summary</h2>
+  </div>
+  <div class="result_text">
+    {{ message1 }}
+</div>
+<div class="services">
+  <div class="container">
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <div class="button services_button">
+          <a href="/download1" class="d-flex flex-row align-items-center justify-content-center">
+            Download<img src="static/images/arrow_right.svg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="col text-center">
+        <form method="POST">
+          <div class='buttons'>
+          <input type="submit" value="Re-Sum" id="summarize">
+          </div>
+        </form>
+      </div>
+      <div class="col text-center">
+        <div class="button services_button">
+          <a href="/" class="d-flex flex-row align-items-center justify-content-center">
+            Back<img src="static/images/arrow_right.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 </body>
 </html>
